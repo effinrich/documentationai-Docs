@@ -1,0 +1,123 @@
+---
+title: Configuring ForgeKit Settings
+description: Personalize your ForgeKit experience by adjusting app preferences, managing subscriptions, and ensuring privacy.
+---
+
+## Overview
+
+ForgeKit provides a comprehensive settings menu to tailor the app to your cleaning routine and preferences. Access settings from the main menu by tapping the gear icon in the top-right corner. Customize rooms, tasks, notifications, subscriptions, and privacy options to create a calm, personalized experience.
+
+<Callout kind="tip">
+Review your settings weekly to keep tasks aligned with your current needs and maintain your streak.
+</Callout>
+
+## Room and Task Management
+
+Manage your home's rooms and associated tasks directly in the app. Add, edit, or remove rooms to reflect your space accurately. Tasks auto-generate based on your schedule, but you can override them anytime.
+
+<Steps>
+  <Step title="Access Room Settings" icon="settings">
+    Open the app and navigate to **Settings > Rooms & Tasks**.
+  </Step>
+  <Step title="Add a Room" icon="plus">
+    Tap **Add Room**, enter the name (e.g., "Living Room"), and select recurring tasks like vacuuming or dusting.
+  </Step>
+  <Step title="Customize Tasks" icon="edit">
+    For each room, toggle tasks on/off or adjust frequency (daily, weekly).
+  </Step>
+  <Step title="Save Changes" icon="check">
+    Tap **Save** to update your daily task list instantly.
+  </Step>
+</Steps>
+
+| Setting | Description | Options |
+|---------|-------------|---------|
+| Room Name | Custom label for the space | Text input, up to 50 characters |
+| Task Frequency | How often the task appears | Daily, Weekly, Bi-weekly, Monthly |
+| Priority | Task urgency level | Low, Medium, High |
+
+## Notification and Reminder Customization
+
+Tailor notifications to feel supportive rather than overwhelming. Set gentle reminders that match your productive times.
+
+<Tabs>
+  <Tab title="Android" icon="android">
+    Go to device **Settings > Apps > ForgeKit > Notifications**. Enable category-specific alerts for tasks and streaks.
+    
+    Customize in-app:
+    
+    ````bash
+    # Example notification preferences (via app export)
+    {
+      "dailyReminder": "9:00 AM",
+      "streakAlert": true,
+      "completionSound": "gentle-chime"
+    }
+    ````
+  </Tab>
+  <Tab title="iOS" icon="apple">
+    Use iOS **Settings > Notifications > ForgeKit**. Allow critical alerts for streak maintenance.
+    
+    In-app options mirror Android for consistency.
+    
+    ````json
+    {
+      "dailyReminder": "9:00 AM",
+      "streakAlert": true,
+      "completionVibration": "soft-pulse"
+    }
+    ````
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+Notifications work offline-first, ensuring instant feedback even without internet.
+</Callout>
+
+## Subscription Tiers and Upgrades
+
+Choose a plan that fits your needs. All tiers include core features, with Premium unlocking advanced pattern learning and unlimited rooms.
+
+<Columns cols={2}>
+  <Card title="Free" icon="star" horizontal>
+    Unlimited tasks, basic scheduling, 3 rooms max.
+    
+    Perfect for getting started.
+  </Card>
+  <Card title="Premium" icon="zap" horizontal cta="Upgrade Now">
+    Unlimited rooms, pattern learning, custom themes, priority support ($4.99/month).
+  </Card>
+</Columns>
+
+To upgrade:
+1. Go to **Settings > Subscription**.
+2. Select your tier and confirm payment via Google Play or App Store.
+
+## Data Privacy and Pattern Learning Settings
+
+ForgeKit prioritizes your privacy—data stays on-device by default. Enable pattern learning to adapt tasks to your habits.
+
+<Expandable title="Advanced Privacy Options" default-open="false">
+
+Disable pattern learning if preferred:
+
+````json
+{
+  "patternLearning": false,
+  "dataExport": "json",
+  "shareAnalytics": false
+}
+````
+
+Export settings via **Settings > Privacy > Export Data** for backup.
+
+Key privacy features:
+- No cloud sync without opt-in
+- Local storage only for habits
+- Delete all data anytime
+
+</Expandable>
+
+<Expandable title="Troubleshooting Settings">
+If sync issues occur, toggle **Offline Mode** off in privacy settings and reconnect.
+</Expandable>
